@@ -1,7 +1,7 @@
 # Azure Fuctions with Python
 Azure Functions from scratch with Python, for enterprise production environments.
 
-## How to use this repository
+## How to use this repository
 This repository is a step-by-step guide to create Azure Functions with Python. Each step is a branch in this repository. To follow along, clone this repository and checkout the branch that corresponds to the step you want to follow.
 
 ## Table of Contents
