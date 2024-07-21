@@ -41,12 +41,12 @@ Once you are logged in, you can start creating the resources.
 All commands have a similar structure. It should not be hard to follow along!
 For a detailed explanation of each command, please refer to the YouTube video.
 
-1. Create a Resource Group
+### Creating a Resource Group
 ```bash
 az group create --name <resource-group-name> --location <location>
 ```
 
-2. Create a Storage Account
+### Creating a Storage Account
 If this is your first time creating a storage account, you may need to register the Microsoft.Storage resource provider. You can do this by running:
 ```bash
 az provider register --namespace Microsoft.Storage
@@ -60,11 +60,11 @@ Then, you can create the storage account by running:
 ```bash
 az storage account create -n <storage-account-name> -l <location> -g <resource-group-name> --sku Standard_LRS
 ```
-*note that we are using shorthand notation for this command (e.g. `-n` instead of `--name`)*
+*note that we are using shorthand notation for this command (e.g. `-n` instead of `--name`)*<br>
 One thing worth mentioning is that the storage account's name has to be unique across all Azure (not just your account!). If you get an error saying that the name is already taken, try a different name.
 
 
-3. Create an App Service Plan
+### Creating an App Service Plan
 If this is your first time creating an app service plan, you may need to register the Microsoft.Web resource provider. You can do this in the same way that you registered the `Microsoft.Storage` resource provider.
 
 You can create the app service plan by running:
@@ -79,7 +79,7 @@ A few things worth mentioning:
     - There is a free dedicated plan (`F1`), but it does not support Azure Functions.
     - Later on, we will see how to create a consumption plan (`Y1`), which is truly serverless and offers a limited amount of free requests.
 
-## Creating the Function App
+## Creating the Function App
 Once the resources mentioned above are created, we can create the Function App by running:
 ```bash
 az functionapp create -n <function-app-name> -g <resource-group-name> -s <storage-account-name> -p <app-service-plan-name> --runtime python --runtime-version 3.11 --functions-version 4
